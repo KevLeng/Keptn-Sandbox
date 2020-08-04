@@ -1,6 +1,6 @@
 ---
 spec_version: '0.1.0'
-dtCreds:dynatrace-bpay
+dtCreds: 'dynatrace-bpay'
 dashboard: eb9a411d-48bd-4301-9c71-622524f10a4e
 attachRules:
   tagRule:
