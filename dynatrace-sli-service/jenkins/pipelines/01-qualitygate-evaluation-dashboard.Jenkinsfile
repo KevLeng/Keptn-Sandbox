@@ -16,10 +16,9 @@ node {
     ])
 
     stage('Initialize Keptn') {
-
 		keptn.downloadFile("https://raw.githubusercontent.com/KevLeng/Keptn-Sandbox/master/dynatrace-sli-service/jenkins/dynatraceconfig/dynatrace.conf.yaml", 'keptn/dynatrace/dynatrace.conf.yaml')
 		
-        keptn.downloadFile("https://raw.githubusercontent.com/keptn-sandbox/keptn-in-a-box/master/resources/jenkins/pipelines/keptn/slo_${params.SLI}.yaml", 'keptn/slo.yaml')
+        //keptn.downloadFile("https://raw.githubusercontent.com/keptn-sandbox/keptn-in-a-box/master/resources/jenkins/pipelines/keptn/slo_${params.SLI}.yaml", 'keptn/slo.yaml')
         keptn.downloadFile("https://raw.githubusercontent.com/keptn-sandbox/keptn-in-a-box/master/resources/jenkins/pipelines/keptn/dynatrace/sli_${params.SLI}.yaml", 'keptn/sli.yaml')
         archiveArtifacts artifacts:'keptn/**/*.*'
 
@@ -28,8 +27,8 @@ node {
 
         // Upload all the files
         keptn.keptnAddResources('keptn/dynatrace/dynatrace.conf.yaml','dynatrace/dynatrace.conf.yaml')
-        keptn.keptnAddResources('keptn/sli.yaml','dynatrace/sli.yaml')
-        keptn.keptnAddResources('keptn/slo.yaml','slo.yaml')
+        //keptn.keptnAddResources('keptn/sli.yaml','dynatrace/sli.yaml')
+        keptn.keptnAddResources('','slo.yaml')
     }
     stage('Trigger Quality Gate') {
         echo "Quality Gates ONLY: Just triggering an SLI/SLO-based evaluation for the passed timeframe"
