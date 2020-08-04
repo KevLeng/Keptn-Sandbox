@@ -16,8 +16,8 @@ node {
     ])
 
     stage('Initialize Keptn') {
-        //keptn.downloadFile("https://raw.githubusercontent.com/keptn-sandbox/keptn-in-a-box/master/resources/jenkins/pipelines/keptn/dynatrace/dynatrace.conf.yaml", 'keptn/dynatrace/dynatrace.conf.yaml')
-		keptn.downloadFile("https://raw.githubusercontent.com/KevLeng/Keptn-Sandbox/master/dynatrace-sli-service/jenkins/dynatraceconfig/dynatrace.conf.yaml", 'keptn/dynatrace/dynatrace.conf.yaml')
+
+		keptn.downloadFile("https://raw.githubusercontent.com/KevLeng/Keptn-Sandbox/master/dynatrace-sli-service/jenkins/dynatraceconfig/customer.dynatrace.conf.yaml", 'keptn/dynatrace/dynatrace.conf.yaml')
 		
         keptn.downloadFile("https://raw.githubusercontent.com/keptn-sandbox/keptn-in-a-box/master/resources/jenkins/pipelines/keptn/slo_${params.SLI}.yaml", 'keptn/slo.yaml')
         keptn.downloadFile("https://raw.githubusercontent.com/keptn-sandbox/keptn-in-a-box/master/resources/jenkins/pipelines/keptn/dynatrace/sli_${params.SLI}.yaml", 'keptn/sli.yaml')
