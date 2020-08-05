@@ -4,7 +4,7 @@ def keptn = new sh.keptn.Keptn()
 node {
     properties([
         parameters([
-         string(defaultValue: 'qualitygate-simpletest', description: 'Name of your Keptn Project for Quality Gate Feedback ', name: 'Project', trim: false), 
+         string(defaultValue: 'demo-simpletest', description: 'Name of your Keptn Project for Quality Gate Feedback ', name: 'Project', trim: false), 
          string(defaultValue: 'qualitystage', description: 'Stage in your Keptn project used for for Quality Gate Feedback', name: 'Stage', trim: false), 
          string(defaultValue: 'frontend', description: 'Servicename used to keep SLIs and SLOs', name: 'Service', trim: false),
          choice(choices: ['dynatrace', 'prometheus',''], description: 'Select which monitoring tool should be configured as SLI provider', name: 'Monitoring', trim: false),
