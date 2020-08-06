@@ -6,7 +6,7 @@ node {
         parameters([
          string(defaultValue: 'bpay', description: 'Name of your Keptn Project for Performance as a Self-Service', name: 'Project', trim: false), 
          string(defaultValue: 'qualitystage', description: 'Stage in your Keptn project used for Performance Feedback', name: 'Stage', trim: false), 
-         string(defaultValue: 'loadtest', description: 'Servicename used to keep SLIs, SLOs, test files ...', name: 'Service', trim: false),
+         string(defaultValue: 'performancetest', description: 'Servicename used to keep SLIs, SLOs, test files ...', name: 'Service', trim: false),
          choice(choices: ['dynatrace', 'prometheus',''], description: 'Select which monitoring tool should be configured as SLI provider', name: 'Monitoring', trim: false),
          choice(choices: ['performance', 'performance_10', 'performance_50', 'performance_100', 'performance_long'], description: 'Test Strategy aka Workload, e.g: performance, performance_10, performance_50, performance_100, performance_long', name: 'TestStrategy', trim: false),
          choice(choices: ['perftest','basic'], description: 'Decide which set of SLIs you want to evaluate. The sample comes with: basic and perftest', name: 'SLI'),
@@ -23,7 +23,7 @@ node {
         keptn.downloadFile("https://raw.githubusercontent.com/keptn-sandbox/keptn-in-a-box/master/resources/jenkins/pipelines/keptn/dynatrace/sli_${params.SLI}.yaml", 'keptn/sli.yaml')
         
 		keptn.downloadFile('https://raw.githubusercontent.com/KevLeng/Keptn-Sandbox/master/jmeter/customer.load.jmx', 'keptn/jmeter/load.jmx')
-        keptn.downloadFile('https://raw.githubusercontent.com/KevLeng/Keptn-Sandbox/master/jmeter/jmeter.conf.yaml',
+        keptn.downloadFile('https://raw.githubusercontent.com/KevLeng/Keptn-Sandbox/master/jmeter/jmeter.conf.yaml', 'keptn/jmeter/jmeter.conf.yaml')
         archiveArtifacts artifacts:'keptn/**/*.*'
 
         // Initialize the Keptn Project
